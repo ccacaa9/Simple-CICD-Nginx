@@ -14,7 +14,7 @@ pipeline {
         stage('Try SSH') {
             steps {
                 sshagent(['ssh-to-vm']) {
-                 sh """ssh -tt -o StrictHostKeyChecking=no ccacaa9@192.168.255.30 << EOF  2>&1                           
+                 sh """ssh -tt -o StrictHostKeyChecking=no ccacaa@192.168.255.30 << EOF  2>&1                           
                          hostnamectl
                          exit
                          EOF"""
