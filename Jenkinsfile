@@ -6,5 +6,10 @@ pipeline {
                 echo 'Hello, this is a test pipeline!'
             }
         }
+        stage('Test Echo 2') {
+            steps {
+                echo 'Hello, this is a test pipeline! Step 2'
+            }
+        }
     }
 }
