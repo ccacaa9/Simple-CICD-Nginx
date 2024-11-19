@@ -11,5 +11,16 @@ pipeline {
                 echo 'Hello, this is a test pipeline! Step 2'
             }
         }
+        stage('Try SSH') {
+            steps {
+                sshagent(['ssh-to-vm']) {
+                 sh """ssh -tt -o StrictHostKeyChecking=no kazami@192.168.56.2 << EOF  2>&1                           
+                         hostnamectl
+                         exit
+                         EOF"""
+                 }
+            }
+
+        }
     }
 }
